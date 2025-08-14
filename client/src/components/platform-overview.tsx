@@ -158,21 +158,26 @@ const PlatformOverview = () => {
                             <stop offset="50%" stopColor="#8b5cf6" />
                             <stop offset="100%" stopColor="#06b6d4" />
                           </linearGradient>
-                          <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-                            <polygon points="0 0, 10 3.5, 0 7" fill="url(#circleGradient)" />
-                          </marker>
                         </defs>
-                        {/* Circular path with arrows */}
+                        {/* Dashed circular path */}
                         <circle 
                           cx="160" 
                           cy="160" 
                           r="120" 
                           fill="none" 
                           stroke="url(#circleGradient)" 
-                          strokeWidth="8" 
-                          strokeDasharray="15,5" 
-                          markerEnd="url(#arrowhead)"
+                          strokeWidth="6" 
+                          strokeDasharray="20,10"
                         />
+                        {/* 4 Arrowheads positioned at cardinal points */}
+                        {/* Top arrow */}
+                        <polygon points="160,35 170,50 150,50" fill="url(#circleGradient)" />
+                        {/* Right arrow */}
+                        <polygon points="285,160 270,150 270,170" fill="url(#circleGradient)" />
+                        {/* Bottom arrow */}
+                        <polygon points="160,285 150,270 170,270" fill="url(#circleGradient)" />
+                        {/* Left arrow */}
+                        <polygon points="35,160 50,170 50,150" fill="url(#circleGradient)" />
                       </svg>
                     </div>
                     
