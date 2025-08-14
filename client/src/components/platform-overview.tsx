@@ -150,38 +150,29 @@ const PlatformOverview = () => {
                 <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-8">
                   <div className="relative w-80 h-80 mx-auto">
                     {/* Continuous rotating arrow circle */}
-                    <div className="absolute inset-0" style={{ animation: 'spin 8s linear infinite' }}>
+                    <div className="absolute inset-0 animate-spin-slow">
                       <svg width="320" height="320" viewBox="0 0 320 320" className="w-full h-full">
                         <defs>
-                          <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <linearGradient id="circleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                             <stop offset="0%" stopColor="#3b82f6" />
                             <stop offset="50%" stopColor="#8b5cf6" />
                             <stop offset="100%" stopColor="#06b6d4" />
                           </linearGradient>
+                          <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="url(#circleGradient)" />
+                          </marker>
                         </defs>
-                        
-                        {/* Single circle with integrated white arrow breaks - radius 120 */}
-                        {/* Circle segments with gaps for arrows at cardinal points */}
-                        <path d="M 160 40 A 120 120 0 0 1 268 95" fill="none" stroke="url(#blueGradient)" strokeWidth="8"/>
-                        <path d="M 285 125 A 120 120 0 0 1 280 160" fill="none" stroke="url(#blueGradient)" strokeWidth="8"/>
-                        <path d="M 280 160 A 120 120 0 0 1 225 268" fill="none" stroke="url(#blueGradient)" strokeWidth="8"/>
-                        <path d="M 195 285 A 120 120 0 0 1 160 280" fill="none" stroke="url(#blueGradient)" strokeWidth="8"/>
-                        <path d="M 160 280 A 120 120 0 0 1 52 225" fill="none" stroke="url(#blueGradient)" strokeWidth="8"/>
-                        <path d="M 35 195 A 120 120 0 0 1 40 160" fill="none" stroke="url(#blueGradient)" strokeWidth="8"/>
-                        <path d="M 40 160 A 120 120 0 0 1 95 52" fill="none" stroke="url(#blueGradient)" strokeWidth="8"/>
-                        <path d="M 125 35 A 120 120 0 0 1 160 40" fill="none" stroke="url(#blueGradient)" strokeWidth="8"/>
-                        
-                        {/* White triangular arrows at cardinal points - properly aligned with circle */}
-                        <g fill="white" stroke="url(#blueGradient)" strokeWidth="2">
-                          {/* Top-right arrow (45°) - pointing clockwise */}
-                          <polygon points="270,100 285,110 275,125" />
-                          {/* Bottom-right arrow (135°) - pointing clockwise */}
-                          <polygon points="220,270 210,285 195,275" />
-                          {/* Bottom-left arrow (225°) - pointing clockwise */}
-                          <polygon points="50,220 35,210 45,195" />
-                          {/* Top-left arrow (315°) - pointing clockwise */}
-                          <polygon points="100,50 115,35 125,45" />
-                        </g>
+                        {/* Circular path with arrows */}
+                        <circle 
+                          cx="160" 
+                          cy="160" 
+                          r="120" 
+                          fill="none" 
+                          stroke="url(#circleGradient)" 
+                          strokeWidth="8" 
+                          strokeDasharray="15,5" 
+                          markerEnd="url(#arrowhead)"
+                        />
                       </svg>
                     </div>
                     
@@ -217,7 +208,7 @@ const PlatformOverview = () => {
                     
                     {/* Center circle */}
                     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                      <div className="bg-white rounded-full w-40 h-40 flex items-center justify-center shadow-xl border-4 border-blue-300">
+                      <div className="bg-white rounded-full w-40 h-40 flex items-center justify-center shadow-xl border-4 border-blue-200">
                         <div className="text-center">
                           <p className="text-lg font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-1">AI-automated</p>
                           <p className="text-lg font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-1">and collaborative</p>
@@ -227,8 +218,8 @@ const PlatformOverview = () => {
                     </div>
                     
                     {/* Corner labels */}
-                    <div className="absolute top-8 left-4 text-sm font-medium text-blue-700">Data producers</div>
-                    <div className="absolute top-8 right-4 text-sm font-medium text-blue-700">Data consumers</div>
+                    <div className="absolute top-4 left-8 text-sm font-medium text-blue-700">Data producers</div>
+                    <div className="absolute top-4 right-8 text-sm font-medium text-blue-700">Data consumers</div>
                   </div>
                 </div>
               </div>
