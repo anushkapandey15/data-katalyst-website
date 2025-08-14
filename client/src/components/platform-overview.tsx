@@ -158,34 +158,29 @@ const PlatformOverview = () => {
                             <stop offset="50%" stopColor="#8b5cf6" />
                             <stop offset="100%" stopColor="#06b6d4" />
                           </linearGradient>
-                          <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
-                            <path d="M0,0 L0,6 L9,3 z" fill="white" stroke="url(#blueGradient)" strokeWidth="1"/>
-                          </marker>
                         </defs>
                         
-                        {/* Circular path with integrated arrows - clockwise direction */}
-                        <circle 
-                          cx="160" 
-                          cy="160" 
-                          r="100" 
-                          fill="none" 
-                          stroke="url(#blueGradient)" 
-                          strokeWidth="10" 
-                          strokeDasharray="60,20" 
-                          markerMid="url(#arrow)"
-                          pathLength="320"
-                        />
+                        {/* Single circle with integrated white arrow breaks - radius 120 to match center positioning */}
+                        {/* Circle segments with gaps for arrows */}
+                        <path d="M 160 40 A 120 120 0 0 1 266 94" fill="none" stroke="url(#blueGradient)" strokeWidth="8"/>
+                        <path d="M 274 106 A 120 120 0 0 1 280 160" fill="none" stroke="url(#blueGradient)" strokeWidth="8"/>
+                        <path d="M 280 160 A 120 120 0 0 1 226 274" fill="none" stroke="url(#blueGradient)" strokeWidth="8"/>
+                        <path d="M 214 286 A 120 120 0 0 1 160 280" fill="none" stroke="url(#blueGradient)" strokeWidth="8"/>
+                        <path d="M 160 280 A 120 120 0 0 1 54 226" fill="none" stroke="url(#blueGradient)" strokeWidth="8"/>
+                        <path d="M 46 214 A 120 120 0 0 1 40 160" fill="none" stroke="url(#blueGradient)" strokeWidth="8"/>
+                        <path d="M 40 160 A 120 120 0 0 1 94 54" fill="none" stroke="url(#blueGradient)" strokeWidth="8"/>
+                        <path d="M 106 46 A 120 120 0 0 1 160 40" fill="none" stroke="url(#blueGradient)" strokeWidth="8"/>
                         
-                        {/* Additional arrow markers at specific positions */}
-                        <g stroke="url(#blueGradient)" strokeWidth="2" fill="white">
-                          {/* Top arrow - pointing clockwise */}
-                          <polygon points="160,55 170,65 150,65" />
-                          {/* Right arrow - pointing clockwise */}
-                          <polygon points="265,160 255,150 255,170" />
-                          {/* Bottom arrow - pointing clockwise */}
-                          <polygon points="160,265 150,255 170,255" />
-                          {/* Left arrow - pointing clockwise */}
-                          <polygon points="55,160 65,170 65,150" />
+                        {/* White triangular arrows positioned at gaps in the circle - clockwise direction */}
+                        <g fill="white" stroke="url(#blueGradient)" strokeWidth="2">
+                          {/* Top arrow - pointing right (clockwise) */}
+                          <polygon points="270,100 280,90 280,110" />
+                          {/* Right arrow - pointing down (clockwise) */}
+                          <polygon points="230,280 220,270 240,270" />
+                          {/* Bottom arrow - pointing left (clockwise) */}
+                          <polygon points="50,220 40,210 40,230" />
+                          {/* Left arrow - pointing up (clockwise) */}
+                          <polygon points="100,40 110,50 90,50" />
                         </g>
                       </svg>
                     </div>
