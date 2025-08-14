@@ -11,6 +11,9 @@ Professional website for Data Katalyst showcasing their 5-pillar data framework 
 - Database: In-memory storage (PostgreSQL endpoint disabled)
 
 ## Recent Changes
+- **2025-08-14**: Added comprehensive platform overview section showcasing Store/Build-Run-Operate/Trust-Comply-Consume framework
+- **2025-08-14**: Implemented visual integration diagram with cloud providers and tool integrations
+- **2025-08-14**: Created semantic graph visualization with AI-automated governance center
 - **2024-12-19**: Fixed "four pillars" reference to "five pillars" in hero section
 - **2024-12-19**: Added 5th pillar (DataOps) to complete the framework
 - **2024-12-19**: Implemented responsive contact form with validation and loading states
