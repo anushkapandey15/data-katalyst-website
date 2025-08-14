@@ -160,27 +160,27 @@ const PlatformOverview = () => {
                           </linearGradient>
                         </defs>
                         
-                        {/* Single circle with integrated white arrow breaks - radius 120 to match center positioning */}
-                        {/* Circle segments with gaps for arrows */}
-                        <path d="M 160 40 A 120 120 0 0 1 266 94" fill="none" stroke="url(#blueGradient)" strokeWidth="8"/>
-                        <path d="M 274 106 A 120 120 0 0 1 280 160" fill="none" stroke="url(#blueGradient)" strokeWidth="8"/>
-                        <path d="M 280 160 A 120 120 0 0 1 226 274" fill="none" stroke="url(#blueGradient)" strokeWidth="8"/>
-                        <path d="M 214 286 A 120 120 0 0 1 160 280" fill="none" stroke="url(#blueGradient)" strokeWidth="8"/>
-                        <path d="M 160 280 A 120 120 0 0 1 54 226" fill="none" stroke="url(#blueGradient)" strokeWidth="8"/>
-                        <path d="M 46 214 A 120 120 0 0 1 40 160" fill="none" stroke="url(#blueGradient)" strokeWidth="8"/>
-                        <path d="M 40 160 A 120 120 0 0 1 94 54" fill="none" stroke="url(#blueGradient)" strokeWidth="8"/>
-                        <path d="M 106 46 A 120 120 0 0 1 160 40" fill="none" stroke="url(#blueGradient)" strokeWidth="8"/>
+                        {/* Single circle with integrated white arrow breaks - radius 120 */}
+                        {/* Circle segments with gaps for arrows at cardinal points */}
+                        <path d="M 160 40 A 120 120 0 0 1 268 95" fill="none" stroke="url(#blueGradient)" strokeWidth="8"/>
+                        <path d="M 285 125 A 120 120 0 0 1 280 160" fill="none" stroke="url(#blueGradient)" strokeWidth="8"/>
+                        <path d="M 280 160 A 120 120 0 0 1 225 268" fill="none" stroke="url(#blueGradient)" strokeWidth="8"/>
+                        <path d="M 195 285 A 120 120 0 0 1 160 280" fill="none" stroke="url(#blueGradient)" strokeWidth="8"/>
+                        <path d="M 160 280 A 120 120 0 0 1 52 225" fill="none" stroke="url(#blueGradient)" strokeWidth="8"/>
+                        <path d="M 35 195 A 120 120 0 0 1 40 160" fill="none" stroke="url(#blueGradient)" strokeWidth="8"/>
+                        <path d="M 40 160 A 120 120 0 0 1 95 52" fill="none" stroke="url(#blueGradient)" strokeWidth="8"/>
+                        <path d="M 125 35 A 120 120 0 0 1 160 40" fill="none" stroke="url(#blueGradient)" strokeWidth="8"/>
                         
-                        {/* White triangular arrows positioned at gaps in the circle - clockwise direction */}
+                        {/* White triangular arrows at cardinal points - properly aligned with circle */}
                         <g fill="white" stroke="url(#blueGradient)" strokeWidth="2">
-                          {/* Top arrow - pointing right (clockwise) */}
-                          <polygon points="270,100 280,90 280,110" />
-                          {/* Right arrow - pointing down (clockwise) */}
-                          <polygon points="230,280 220,270 240,270" />
-                          {/* Bottom arrow - pointing left (clockwise) */}
-                          <polygon points="50,220 40,210 40,230" />
-                          {/* Left arrow - pointing up (clockwise) */}
-                          <polygon points="100,40 110,50 90,50" />
+                          {/* Top-right arrow (45°) - pointing clockwise */}
+                          <polygon points="270,100 285,110 275,125" />
+                          {/* Bottom-right arrow (135°) - pointing clockwise */}
+                          <polygon points="220,270 210,285 195,275" />
+                          {/* Bottom-left arrow (225°) - pointing clockwise */}
+                          <polygon points="50,220 35,210 45,195" />
+                          {/* Top-left arrow (315°) - pointing clockwise */}
+                          <polygon points="100,50 115,35 125,45" />
                         </g>
                       </svg>
                     </div>
