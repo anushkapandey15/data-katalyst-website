@@ -150,7 +150,7 @@ const PlatformOverview = () => {
                 <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-8">
                   <div className="relative w-80 h-80 mx-auto">
                     {/* Continuous rotating arrow circle */}
-                    <div className="absolute inset-0 animate-spin-slow">
+                    <div className="absolute inset-0" style={{ animation: 'spin 8s linear infinite' }}>
                       <svg width="320" height="320" viewBox="0 0 320 320" className="w-full h-full">
                         <defs>
                           <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -158,26 +158,35 @@ const PlatformOverview = () => {
                             <stop offset="50%" stopColor="#8b5cf6" />
                             <stop offset="100%" stopColor="#06b6d4" />
                           </linearGradient>
+                          <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+                            <path d="M0,0 L0,6 L9,3 z" fill="white" stroke="url(#blueGradient)" strokeWidth="1"/>
+                          </marker>
                         </defs>
-                        {/* Blue gradient ring broken by white arrows */}
-                        {/* Top arc */}
-                        <path d="M 160 40 A 120 120 0 0 1 270 90" fill="none" stroke="url(#blueGradient)" strokeWidth="12" strokeLinecap="round"/>
-                        {/* Right arc */}
-                        <path d="M 280 160 A 120 120 0 0 1 230 270" fill="none" stroke="url(#blueGradient)" strokeWidth="12" strokeLinecap="round"/>
-                        {/* Bottom arc */}
-                        <path d="M 160 280 A 120 120 0 0 1 50 230" fill="none" stroke="url(#blueGradient)" strokeWidth="12" strokeLinecap="round"/>
-                        {/* Left arc */}
-                        <path d="M 40 160 A 120 120 0 0 1 90 50" fill="none" stroke="url(#blueGradient)" strokeWidth="12" strokeLinecap="round"/>
                         
-                        {/* White triangular arrows breaking the circle */}
-                        {/* Top arrow */}
-                        <polygon points="160,35 175,55 145,55" fill="white" stroke="url(#blueGradient)" strokeWidth="2"/>
-                        {/* Right arrow */}
-                        <polygon points="285,160 265,145 265,175" fill="white" stroke="url(#blueGradient)" strokeWidth="2"/>
-                        {/* Bottom arrow */}
-                        <polygon points="160,285 145,265 175,265" fill="white" stroke="url(#blueGradient)" strokeWidth="2"/>
-                        {/* Left arrow */}
-                        <polygon points="35,160 55,175 55,145" fill="white" stroke="url(#blueGradient)" strokeWidth="2"/>
+                        {/* Circular path with integrated arrows - clockwise direction */}
+                        <circle 
+                          cx="160" 
+                          cy="160" 
+                          r="100" 
+                          fill="none" 
+                          stroke="url(#blueGradient)" 
+                          strokeWidth="10" 
+                          strokeDasharray="60,20" 
+                          markerMid="url(#arrow)"
+                          pathLength="320"
+                        />
+                        
+                        {/* Additional arrow markers at specific positions */}
+                        <g stroke="url(#blueGradient)" strokeWidth="2" fill="white">
+                          {/* Top arrow - pointing clockwise */}
+                          <polygon points="160,55 170,65 150,65" />
+                          {/* Right arrow - pointing clockwise */}
+                          <polygon points="265,160 255,150 255,170" />
+                          {/* Bottom arrow - pointing clockwise */}
+                          <polygon points="160,265 150,255 170,255" />
+                          {/* Left arrow - pointing clockwise */}
+                          <polygon points="55,160 65,170 65,150" />
+                        </g>
                       </svg>
                     </div>
                     
