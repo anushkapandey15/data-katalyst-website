@@ -150,7 +150,7 @@ const PlatformOverview = () => {
                 <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-8">
                   <div className="relative w-80 h-80 mx-auto">
                     {/* Continuous rotating arrow circle */}
-                    <div className="absolute inset-0 animate-spin-slow">
+                    <div className="absolute inset-0" style={{ animation: 'spin 8s linear infinite' }}>
                       <svg width="320" height="320" viewBox="0 0 320 320" className="w-full h-full">
                         <defs>
                           <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -159,25 +159,29 @@ const PlatformOverview = () => {
                             <stop offset="100%" stopColor="#06b6d4" />
                           </linearGradient>
                         </defs>
-                        {/* Blue gradient ring broken by white arrows */}
-                        {/* Top arc */}
-                        <path d="M 160 40 A 120 120 0 0 1 270 90" fill="none" stroke="url(#blueGradient)" strokeWidth="12" strokeLinecap="round"/>
-                        {/* Right arc */}
-                        <path d="M 280 160 A 120 120 0 0 1 230 270" fill="none" stroke="url(#blueGradient)" strokeWidth="12" strokeLinecap="round"/>
-                        {/* Bottom arc */}
-                        <path d="M 160 280 A 120 120 0 0 1 50 230" fill="none" stroke="url(#blueGradient)" strokeWidth="12" strokeLinecap="round"/>
-                        {/* Left arc */}
-                        <path d="M 40 160 A 120 120 0 0 1 90 50" fill="none" stroke="url(#blueGradient)" strokeWidth="12" strokeLinecap="round"/>
                         
-                        {/* White triangular arrows breaking the circle */}
-                        {/* Top arrow */}
-                        <polygon points="160,35 175,55 145,55" fill="white" stroke="url(#blueGradient)" strokeWidth="2"/>
-                        {/* Right arrow */}
-                        <polygon points="285,160 265,145 265,175" fill="white" stroke="url(#blueGradient)" strokeWidth="2"/>
-                        {/* Bottom arrow */}
-                        <polygon points="160,285 145,265 175,265" fill="white" stroke="url(#blueGradient)" strokeWidth="2"/>
-                        {/* Left arrow */}
-                        <polygon points="35,160 55,175 55,145" fill="white" stroke="url(#blueGradient)" strokeWidth="2"/>
+                        {/* Single circle with integrated white arrow breaks - radius 120 */}
+                        {/* Circle segments with gaps for arrows at cardinal points */}
+                        <path d="M 160 40 A 120 120 0 0 1 268 95" fill="none" stroke="url(#blueGradient)" strokeWidth="8"/>
+                        <path d="M 285 125 A 120 120 0 0 1 280 160" fill="none" stroke="url(#blueGradient)" strokeWidth="8"/>
+                        <path d="M 280 160 A 120 120 0 0 1 225 268" fill="none" stroke="url(#blueGradient)" strokeWidth="8"/>
+                        <path d="M 195 285 A 120 120 0 0 1 160 280" fill="none" stroke="url(#blueGradient)" strokeWidth="8"/>
+                        <path d="M 160 280 A 120 120 0 0 1 52 225" fill="none" stroke="url(#blueGradient)" strokeWidth="8"/>
+                        <path d="M 35 195 A 120 120 0 0 1 40 160" fill="none" stroke="url(#blueGradient)" strokeWidth="8"/>
+                        <path d="M 40 160 A 120 120 0 0 1 95 52" fill="none" stroke="url(#blueGradient)" strokeWidth="8"/>
+                        <path d="M 125 35 A 120 120 0 0 1 160 40" fill="none" stroke="url(#blueGradient)" strokeWidth="8"/>
+                        
+                        {/* White triangular arrows at cardinal points - properly aligned with circle */}
+                        <g fill="white" stroke="url(#blueGradient)" strokeWidth="2">
+                          {/* Top-right arrow (45°) - pointing clockwise */}
+                          <polygon points="270,100 285,110 275,125" />
+                          {/* Bottom-right arrow (135°) - pointing clockwise */}
+                          <polygon points="220,270 210,285 195,275" />
+                          {/* Bottom-left arrow (225°) - pointing clockwise */}
+                          <polygon points="50,220 35,210 45,195" />
+                          {/* Top-left arrow (315°) - pointing clockwise */}
+                          <polygon points="100,50 115,35 125,45" />
+                        </g>
                       </svg>
                     </div>
                     
