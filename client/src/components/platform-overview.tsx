@@ -155,36 +155,40 @@ const PlatformOverview = () => {
                     </div>
                     
                     {/* Outer labels with arrow shapes and transitions */}
-                    <div className="absolute -top-1 left-8 transform transition-all duration-300 hover:scale-105">
+                    {/* Top label - Data quality and observability */}
+                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 transition-all duration-300 hover:scale-105">
                       <div className="relative">
-                        <div className="text-xs font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 px-3 py-2 rounded-lg shadow-lg">
+                        <div className="text-xs font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 px-3 py-2 rounded-lg shadow-lg whitespace-nowrap">
                           Data quality and observability
                         </div>
                         <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-blue-600"></div>
                       </div>
                     </div>
                     
-                    <div className="absolute top-6 -right-1 transform transition-all duration-300 hover:scale-105">
+                    {/* Right label - Policy setting */}
+                    <div className="absolute top-1/2 -right-4 transform -translate-y-1/2 transition-all duration-300 hover:scale-105">
                       <div className="relative">
-                        <div className="text-xs font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 px-3 py-2 rounded-lg shadow-lg">
+                        <div className="text-xs font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 px-3 py-2 rounded-lg shadow-lg whitespace-nowrap">
                           Policy setting
                         </div>
                         <div className="absolute top-1/2 right-full transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-transparent border-r-blue-600"></div>
                       </div>
                     </div>
                     
-                    <div className="absolute -bottom-1 right-8 transform transition-all duration-300 hover:scale-105">
+                    {/* Bottom label - Data products and marketplace */}
+                    <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 transition-all duration-300 hover:scale-105">
                       <div className="relative">
-                        <div className="text-xs font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 px-3 py-2 rounded-lg shadow-lg">
+                        <div className="text-xs font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 px-3 py-2 rounded-lg shadow-lg whitespace-nowrap">
                           Data products and marketplace
                         </div>
                         <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-b-4 border-transparent border-b-blue-600"></div>
                       </div>
                     </div>
                     
-                    <div className="absolute bottom-6 -left-1 transform transition-all duration-300 hover:scale-105">
+                    {/* Left label - Policy enforcement */}
+                    <div className="absolute top-1/2 -left-4 transform -translate-y-1/2 transition-all duration-300 hover:scale-105">
                       <div className="relative">
-                        <div className="text-xs font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 px-3 py-2 rounded-lg shadow-lg">
+                        <div className="text-xs font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 px-3 py-2 rounded-lg shadow-lg whitespace-nowrap">
                           Policy enforcement
                           <br />
                           <span className="text-xs opacity-90">Business context and semantics</span>
@@ -208,8 +212,8 @@ const PlatformOverview = () => {
                     </div>
                     
                     {/* Corner labels */}
-                    <div className="absolute top-12 left-2 text-xs font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded">Data producers</div>
-                    <div className="absolute top-12 right-2 text-xs font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded">Data consumers</div>
+                    <div className="absolute top-8 left-4 text-sm font-medium text-blue-700 bg-transparent">Data producers</div>
+                    <div className="absolute top-8 right-4 text-sm font-medium text-blue-700 bg-transparent">Data consumers</div>
                   </div>
                 </div>
               </div>
