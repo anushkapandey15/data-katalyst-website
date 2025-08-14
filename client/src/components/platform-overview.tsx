@@ -13,7 +13,7 @@ const PlatformOverview = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-3 gap-6 mb-12">
+        <div className="grid gap-6 mb-12" style={{ gridTemplateColumns: '1fr 2fr 4fr' }}>
           {/* Store Column */}
           <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200">
             <div className="text-center mb-6">
@@ -149,32 +149,67 @@ const PlatformOverview = () => {
               <div className="relative">
                 <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-6">
                   <div className="relative">
-                    {/* Outer labels */}
-                    <div className="absolute -top-2 left-4 text-xs font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 px-2 py-1 rounded">
-                      Data quality and observability
-                    </div>
-                    <div className="absolute top-4 -right-2 text-xs font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 px-2 py-1 rounded">
-                      Policy setting
-                    </div>
-                    <div className="absolute -bottom-2 right-4 text-xs font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 px-2 py-1 rounded">
-                      Data products and marketplace
-                    </div>
-                    <div className="absolute bottom-4 -left-2 text-xs font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 px-2 py-1 rounded">
-                      Policy enforcement
+                    {/* Rotating outer circle */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-48 h-48 border-2 border-dashed border-blue-300 rounded-full animate-spin-slow opacity-30"></div>
                     </div>
                     
-                    {/* Center circle */}
-                    <div className="bg-white rounded-full p-6 mx-auto w-32 h-32 flex items-center justify-center border-4 border-blue-300 shadow-lg">
-                      <div className="text-center">
-                        <p className="text-xs font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-1">AI-automated</p>
-                        <p className="text-xs font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-1">and collaborative</p>
-                        <p className="text-xs font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">stewardship</p>
+                    {/* Outer labels with arrow shapes and transitions */}
+                    <div className="absolute -top-1 left-8 transform transition-all duration-300 hover:scale-105">
+                      <div className="relative">
+                        <div className="text-xs font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 px-3 py-2 rounded-lg shadow-lg">
+                          Data quality and observability
+                        </div>
+                        <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-blue-600"></div>
+                      </div>
+                    </div>
+                    
+                    <div className="absolute top-6 -right-1 transform transition-all duration-300 hover:scale-105">
+                      <div className="relative">
+                        <div className="text-xs font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 px-3 py-2 rounded-lg shadow-lg">
+                          Policy setting
+                        </div>
+                        <div className="absolute top-1/2 right-full transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-transparent border-r-blue-600"></div>
+                      </div>
+                    </div>
+                    
+                    <div className="absolute -bottom-1 right-8 transform transition-all duration-300 hover:scale-105">
+                      <div className="relative">
+                        <div className="text-xs font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 px-3 py-2 rounded-lg shadow-lg">
+                          Data products and marketplace
+                        </div>
+                        <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-b-4 border-transparent border-b-blue-600"></div>
+                      </div>
+                    </div>
+                    
+                    <div className="absolute bottom-6 -left-1 transform transition-all duration-300 hover:scale-105">
+                      <div className="relative">
+                        <div className="text-xs font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 px-3 py-2 rounded-lg shadow-lg">
+                          Policy enforcement
+                          <br />
+                          <span className="text-xs opacity-90">Business context and semantics</span>
+                        </div>
+                        <div className="absolute top-1/2 left-full transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-l-4 border-transparent border-l-blue-600"></div>
+                      </div>
+                    </div>
+                    
+                    {/* Center rotating circle with gradient border */}
+                    <div className="relative mx-auto w-40 h-40 flex items-center justify-center">
+                      <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 animate-spin-slow p-1">
+                        <div className="w-full h-full bg-white rounded-full"></div>
+                      </div>
+                      <div className="relative z-10 text-center bg-white rounded-full w-32 h-32 flex items-center justify-center shadow-lg">
+                        <div>
+                          <p className="text-sm font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-1">AI-automated</p>
+                          <p className="text-sm font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-1">and collaborative</p>
+                          <p className="text-sm font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">stewardship</p>
+                        </div>
                       </div>
                     </div>
                     
                     {/* Corner labels */}
-                    <div className="absolute top-8 left-0 text-xs text-blue-600">Data producers</div>
-                    <div className="absolute top-8 right-0 text-xs text-blue-600">Data consumers</div>
+                    <div className="absolute top-12 left-2 text-xs font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded">Data producers</div>
+                    <div className="absolute top-12 right-2 text-xs font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded">Data consumers</div>
                   </div>
                 </div>
               </div>
