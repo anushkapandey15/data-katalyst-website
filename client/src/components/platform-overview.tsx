@@ -147,73 +147,79 @@ const PlatformOverview = () => {
 
               {/* Governance Circle */}
               <div className="relative">
-                <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-6">
-                  <div className="relative">
-                    {/* Rotating outer circle */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-48 h-48 border-2 border-dashed border-blue-300 rounded-full animate-spin-slow opacity-30"></div>
+                <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-8">
+                  <div className="relative w-80 h-80 mx-auto">
+                    {/* Continuous rotating arrow circle */}
+                    <div className="absolute inset-0 animate-spin-slow">
+                      <svg width="320" height="320" viewBox="0 0 320 320" className="w-full h-full">
+                        <defs>
+                          <linearGradient id="circleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stopColor="#3b82f6" />
+                            <stop offset="50%" stopColor="#8b5cf6" />
+                            <stop offset="100%" stopColor="#06b6d4" />
+                          </linearGradient>
+                          <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="url(#circleGradient)" />
+                          </marker>
+                        </defs>
+                        {/* Circular path with arrows */}
+                        <circle 
+                          cx="160" 
+                          cy="160" 
+                          r="120" 
+                          fill="none" 
+                          stroke="url(#circleGradient)" 
+                          strokeWidth="8" 
+                          strokeDasharray="15,5" 
+                          markerEnd="url(#arrowhead)"
+                        />
+                      </svg>
                     </div>
                     
-                    {/* Outer labels with arrow shapes and transitions */}
-                    {/* Top label - Data quality and observability */}
-                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 transition-all duration-300 hover:scale-105">
-                      <div className="relative">
-                        <div className="text-xs font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 px-3 py-2 rounded-lg shadow-lg whitespace-nowrap">
-                          Data quality and observability
-                        </div>
-                        <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-blue-600"></div>
+                    {/* Static labels positioned around the circle */}
+                    {/* Top - Data quality and observability */}
+                    <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
+                      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-xl shadow-lg text-sm font-medium whitespace-nowrap">
+                        Data quality and observability
                       </div>
                     </div>
                     
-                    {/* Right label - Policy setting */}
-                    <div className="absolute top-1/2 -right-4 transform -translate-y-1/2 transition-all duration-300 hover:scale-105">
-                      <div className="relative">
-                        <div className="text-xs font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 px-3 py-2 rounded-lg shadow-lg whitespace-nowrap">
-                          Policy setting
-                        </div>
-                        <div className="absolute top-1/2 right-full transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-transparent border-r-blue-600"></div>
+                    {/* Right - Policy setting */}
+                    <div className="absolute top-1/2 -right-6 transform -translate-y-1/2">
+                      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-xl shadow-lg text-sm font-medium whitespace-nowrap">
+                        Policy setting
                       </div>
                     </div>
                     
-                    {/* Bottom label - Data products and marketplace */}
-                    <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 transition-all duration-300 hover:scale-105">
-                      <div className="relative">
-                        <div className="text-xs font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 px-3 py-2 rounded-lg shadow-lg whitespace-nowrap">
-                          Data products and marketplace
-                        </div>
-                        <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-b-4 border-transparent border-b-blue-600"></div>
+                    {/* Bottom - Data products and marketplace */}
+                    <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2">
+                      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-xl shadow-lg text-sm font-medium whitespace-nowrap">
+                        Data products and marketplace
                       </div>
                     </div>
                     
-                    {/* Left label - Policy enforcement */}
-                    <div className="absolute top-1/2 -left-4 transform -translate-y-1/2 transition-all duration-300 hover:scale-105">
-                      <div className="relative">
-                        <div className="text-xs font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 px-3 py-2 rounded-lg shadow-lg whitespace-nowrap">
-                          Policy enforcement
-                          <br />
-                          <span className="text-xs opacity-90">Business context and semantics</span>
-                        </div>
-                        <div className="absolute top-1/2 left-full transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-l-4 border-transparent border-l-blue-600"></div>
+                    {/* Left - Policy enforcement */}
+                    <div className="absolute top-1/2 -left-6 transform -translate-y-1/2">
+                      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-xl shadow-lg text-sm font-medium whitespace-nowrap">
+                        Policy enforcement<br />
+                        <span className="text-xs opacity-90">Business context and semantics</span>
                       </div>
                     </div>
                     
-                    {/* Center rotating circle with gradient border */}
-                    <div className="relative mx-auto w-40 h-40 flex items-center justify-center">
-                      <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 animate-spin-slow p-1">
-                        <div className="w-full h-full bg-white rounded-full"></div>
-                      </div>
-                      <div className="relative z-10 text-center bg-white rounded-full w-32 h-32 flex items-center justify-center shadow-lg">
-                        <div>
-                          <p className="text-sm font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-1">AI-automated</p>
-                          <p className="text-sm font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-1">and collaborative</p>
-                          <p className="text-sm font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">stewardship</p>
+                    {/* Center circle */}
+                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                      <div className="bg-white rounded-full w-40 h-40 flex items-center justify-center shadow-xl border-4 border-blue-200">
+                        <div className="text-center">
+                          <p className="text-lg font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-1">AI-automated</p>
+                          <p className="text-lg font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-1">and collaborative</p>
+                          <p className="text-lg font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">stewardship</p>
                         </div>
                       </div>
                     </div>
                     
                     {/* Corner labels */}
-                    <div className="absolute top-8 left-4 text-sm font-medium text-blue-700 bg-transparent">Data producers</div>
-                    <div className="absolute top-8 right-4 text-sm font-medium text-blue-700 bg-transparent">Data consumers</div>
+                    <div className="absolute top-4 left-8 text-sm font-medium text-blue-700">Data producers</div>
+                    <div className="absolute top-4 right-8 text-sm font-medium text-blue-700">Data consumers</div>
                   </div>
                 </div>
               </div>
