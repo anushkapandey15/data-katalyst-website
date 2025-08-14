@@ -153,59 +153,59 @@ const PlatformOverview = () => {
                     <div className="absolute inset-0 animate-spin-slow">
                       <svg width="320" height="320" viewBox="0 0 320 320" className="w-full h-full">
                         <defs>
-                          <linearGradient id="greenGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stopColor="#10b981" />
-                            <stop offset="50%" stopColor="#059669" />
-                            <stop offset="100%" stopColor="#047857" />
+                          <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stopColor="#3b82f6" />
+                            <stop offset="50%" stopColor="#8b5cf6" />
+                            <stop offset="100%" stopColor="#06b6d4" />
                           </linearGradient>
                         </defs>
-                        {/* Green gradient ring broken by white arrows */}
+                        {/* Blue gradient ring broken by white arrows */}
                         {/* Top arc */}
-                        <path d="M 160 40 A 120 120 0 0 1 270 90" fill="none" stroke="url(#greenGradient)" strokeWidth="12" strokeLinecap="round"/>
+                        <path d="M 160 40 A 120 120 0 0 1 270 90" fill="none" stroke="url(#blueGradient)" strokeWidth="12" strokeLinecap="round"/>
                         {/* Right arc */}
-                        <path d="M 280 160 A 120 120 0 0 1 230 270" fill="none" stroke="url(#greenGradient)" strokeWidth="12" strokeLinecap="round"/>
+                        <path d="M 280 160 A 120 120 0 0 1 230 270" fill="none" stroke="url(#blueGradient)" strokeWidth="12" strokeLinecap="round"/>
                         {/* Bottom arc */}
-                        <path d="M 160 280 A 120 120 0 0 1 50 230" fill="none" stroke="url(#greenGradient)" strokeWidth="12" strokeLinecap="round"/>
+                        <path d="M 160 280 A 120 120 0 0 1 50 230" fill="none" stroke="url(#blueGradient)" strokeWidth="12" strokeLinecap="round"/>
                         {/* Left arc */}
-                        <path d="M 40 160 A 120 120 0 0 1 90 50" fill="none" stroke="url(#greenGradient)" strokeWidth="12" strokeLinecap="round"/>
+                        <path d="M 40 160 A 120 120 0 0 1 90 50" fill="none" stroke="url(#blueGradient)" strokeWidth="12" strokeLinecap="round"/>
                         
                         {/* White triangular arrows breaking the circle */}
                         {/* Top arrow */}
-                        <polygon points="160,35 175,55 145,55" fill="white" stroke="url(#greenGradient)" strokeWidth="2"/>
+                        <polygon points="160,35 175,55 145,55" fill="white" stroke="url(#blueGradient)" strokeWidth="2"/>
                         {/* Right arrow */}
-                        <polygon points="285,160 265,145 265,175" fill="white" stroke="url(#greenGradient)" strokeWidth="2"/>
+                        <polygon points="285,160 265,145 265,175" fill="white" stroke="url(#blueGradient)" strokeWidth="2"/>
                         {/* Bottom arrow */}
-                        <polygon points="160,285 145,265 175,265" fill="white" stroke="url(#greenGradient)" strokeWidth="2"/>
+                        <polygon points="160,285 145,265 175,265" fill="white" stroke="url(#blueGradient)" strokeWidth="2"/>
                         {/* Left arrow */}
-                        <polygon points="35,160 55,175 55,145" fill="white" stroke="url(#greenGradient)" strokeWidth="2"/>
+                        <polygon points="35,160 55,175 55,145" fill="white" stroke="url(#blueGradient)" strokeWidth="2"/>
                       </svg>
                     </div>
                     
                     {/* Static labels positioned around the circle */}
-                    {/* Top left - Data quality observability */}
-                    <div className="absolute -top-6 left-4">
-                      <div className="bg-gradient-to-r from-green-600 to-emerald-600 text-white px-4 py-2 rounded-xl shadow-lg text-sm font-medium whitespace-nowrap">
-                        Data quality observability
+                    {/* Top - Data quality and observability */}
+                    <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
+                      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-xl shadow-lg text-sm font-medium whitespace-nowrap">
+                        Data quality and observability
                       </div>
                     </div>
                     
-                    {/* Top right - Policy setting */}
-                    <div className="absolute -top-6 right-4">
-                      <div className="bg-gradient-to-r from-green-600 to-emerald-600 text-white px-4 py-2 rounded-xl shadow-lg text-sm font-medium whitespace-nowrap">
+                    {/* Right - Policy setting */}
+                    <div className="absolute top-1/2 -right-6 transform -translate-y-1/2">
+                      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-xl shadow-lg text-sm font-medium whitespace-nowrap">
                         Policy setting
                       </div>
                     </div>
                     
-                    {/* Bottom right - Data consumers */}
-                    <div className="absolute -bottom-6 right-4">
-                      <div className="bg-gradient-to-r from-green-600 to-emerald-600 text-white px-4 py-2 rounded-xl shadow-lg text-sm font-medium whitespace-nowrap">
-                        Data consumers
+                    {/* Bottom - Data products and marketplace */}
+                    <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2">
+                      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-xl shadow-lg text-sm font-medium whitespace-nowrap">
+                        Data products and marketplace
                       </div>
                     </div>
                     
-                    {/* Bottom left - Policy enforcement */}
-                    <div className="absolute -bottom-6 left-4">
-                      <div className="bg-gradient-to-r from-green-600 to-emerald-600 text-white px-4 py-2 rounded-xl shadow-lg text-sm font-medium whitespace-nowrap">
+                    {/* Left - Policy enforcement */}
+                    <div className="absolute top-1/2 -left-6 transform -translate-y-1/2">
+                      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-xl shadow-lg text-sm font-medium whitespace-nowrap">
                         Policy enforcement<br />
                         <span className="text-xs opacity-90">Business context and semantics</span>
                       </div>
@@ -213,17 +213,18 @@ const PlatformOverview = () => {
                     
                     {/* Center circle */}
                     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                      <div className="bg-white rounded-full w-40 h-40 flex items-center justify-center shadow-xl border-4 border-green-300">
+                      <div className="bg-white rounded-full w-40 h-40 flex items-center justify-center shadow-xl border-4 border-blue-300">
                         <div className="text-center">
-                          <p className="text-lg font-bold text-green-700 mb-1">AI-automated</p>
-                          <p className="text-lg font-bold text-green-700 mb-1">and collaborative</p>
-                          <p className="text-lg font-bold text-green-700">stewardship</p>
+                          <p className="text-lg font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-1">AI-automated</p>
+                          <p className="text-lg font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-1">and collaborative</p>
+                          <p className="text-lg font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">stewardship</p>
                         </div>
                       </div>
                     </div>
                     
-                    {/* Additional labels for context */}
-                    <div className="absolute top-16 left-2 text-sm font-medium text-green-700">Data producers</div>
+                    {/* Corner labels */}
+                    <div className="absolute top-8 left-4 text-sm font-medium text-blue-700">Data producers</div>
+                    <div className="absolute top-8 right-4 text-sm font-medium text-blue-700">Data consumers</div>
                   </div>
                 </div>
               </div>
