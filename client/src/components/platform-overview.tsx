@@ -5,32 +5,36 @@ import {
   Users,
   BarChart3,
   GitBranch,
+  Network,
+  ArrowRight,
+  ArrowLeft,
 } from "lucide-react";
+
+import { motion } from "framer-motion";
+import CircleArrows from "./circle-arrows";
 
 const PlatformOverview = () => {
   return (
-    <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+    <section className="py-4 bg-gradient-to-b from-gray-50 to-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-2 lg:px-2">
+        <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
             Data Katalyst Platform Overview
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Comprehensive data management across storage, processing, and
-            governance with unified control
-          </p>
         </div>
 
         <div
-          className="grid gap-6 mb-12"
-          style={{ gridTemplateColumns: "1fr 2fr 4fr" }}
+          className="grid gap-12 mb-12"
+          style={{ gridTemplateColumns: "1fr 1.2fr 1.8fr" }}
         >
           {/* Store Column */}
           <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200">
             <div className="text-center mb-6">
-              <div className="flex items-center justify-center mb-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-700 rounded-full flex items-center justify-center">
-                  <Database className="w-6 h-6 text-white" />
+              <div className="flex items-center justify-center space-x-4 mb-4">
+                <div className="flex space-x-2">
+                  <div className="w-3 h-3 bg-gradient-to-r from-blue-500 to-blue-700 rounded-full"></div>
+                  <div className="w-3 h-3 bg-gradient-to-r from-blue-500 to-blue-700 rounded-full"></div>
+                  <div className="w-3 h-3 bg-gradient-to-r from-blue-500 to-blue-700 rounded-full"></div>
                 </div>
               </div>
               <h3 className="text-xl font-semibold bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent mb-2">
@@ -40,15 +44,17 @@ const PlatformOverview = () => {
             </div>
 
             <div className="space-y-6">
-              <div className="text-center">
-                <h4 className="font-medium text-gray-900 mb-2">Any storage</h4>
+              <div className="flex justify-center items-center bg-gray-100 py-4 rounded-lg">
+                <span className="text-gray-800 font-medium">Any storage</span>
               </div>
 
               <div className="bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg p-4 border border-blue-200">
-                <p className="text-sm font-medium bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent mb-2">
+                <p className="text-sm font-bold bg-gradient-to-r from-blue-500 to-blue-900 bg-clip-text text-transparent mb-2 text-center">
                   Open table formats
                 </p>
-                <p className="text-xs text-blue-600">Iceberg, Delta, Hudi</p>
+                <p className="text-xs text-blue-600 font-bold text-center">
+                  Iceberg, Delta, Hudi
+                </p>
               </div>
 
               <div className="space-y-3">
@@ -73,7 +79,7 @@ const PlatformOverview = () => {
           </div>
 
           {/* Build/Run/Operate Column */}
-          <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200">
+          <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200 w-70">
             <div className="text-center mb-6">
               <div className="flex items-center justify-center space-x-4 mb-4">
                 <div className="flex space-x-2">
@@ -97,236 +103,219 @@ const PlatformOverview = () => {
             </div>
 
             <div className="space-y-6">
-              <div className="text-center">
-                <h4 className="font-medium text-gray-700 mb-2">
+              <div className="flex justify-center items-center bg-gray-100 py-4 rounded-lg">
+                <span className="text-gray-800 font-medium">
                   Any engine, compute or tool
-                </h4>
+                </span>
               </div>
 
               <div className="bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg p-4 border border-blue-200">
-                <p className="text-sm font-medium bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent mb-2">
+                <p className="text-sm font-bold bg-gradient-to-r from-blue-500 to-blue-900 bg-clip-text text-transparent mb-2 text-center">
                   Technical data catalog
                 </p>
-                <p className="text-xs text-blue-600">Physical metadata</p>
+                <p className="text-xs text-blue-600 font-bold text-center">
+                  Physical metadata
+                </p>
               </div>
 
               <div className="space-y-3">
-                {/* Integration Partners */}
-                <div className="grid grid-cols-2 gap-2">
-                  <div className="bg-gradient-to-r from-blue-100 to-blue-200 border border-blue-200 rounded-lg p-2 text-center">
-                    <span className="text-xs font-medium text-blue-700">
-                      Spark
-                    </span>
-                  </div>
-                  <div className="bg-gradient-to-r from-blue-100 to-blue-200 border border-blue-200 rounded-lg p-2 text-center">
-                    <span className="text-xs font-medium text-blue-700">
-                      Databricks
-                    </span>
-                  </div>
-                  <div className="bg-gradient-to-r from-blue-100 to-blue-200 border border-blue-200 rounded-lg p-2 text-center">
-                    <span className="text-xs font-medium text-blue-700">
-                      Snowflake
-                    </span>
-                  </div>
-                  <div className="bg-gradient-to-r from-blue-100 to-blue-200 border border-blue-200 rounded-lg p-2 text-center">
-                    <span className="text-xs font-medium text-blue-700">
-                      Fivetran
-                    </span>
-                  </div>
-                  <div className="bg-gradient-to-r from-blue-100 to-blue-200 border border-blue-200 rounded-lg p-2 text-center">
-                    <span className="text-xs font-medium text-blue-700">
-                      BigQuery
-                    </span>
-                  </div>
-                  <div className="bg-gradient-to-r from-blue-100 to-blue-200 border border-blue-200 rounded-lg p-2 text-center">
-                    <span className="text-xs font-medium text-blue-700">
-                      Tableau
-                    </span>
-                  </div>
+                {/* Integration Partners (with images) */}
+                <div className="grid grid-cols-4 gap-3">
+                  <img
+                    src="src/components/images/Apache Airflow.png"
+                    alt="Apache Airflow"
+                    style={{ width: "1cm", height: "1cm", objectFit: "contain" }}
+                    className="mx-auto"
+                  />
+                  <img
+                    src="src/components/images/Apache Kafka.png"
+                    alt="Apache Kafka"
+                    style={{ width: "1cm", height: "1cm", objectFit: "contain" }}
+                    className="mx-auto"
+                  />
+                  <img
+                    src="src/components/images/Salesforce.png"
+                    alt="Salesforce"
+                    style={{ width: "1cm", height: "1cm", objectFit: "contain" }}
+                    className="mx-auto"
+                  />
+                  <img
+                    src="src/components/images/D3.js.png"
+                    alt="D3.js"
+                    style={{ width: "1cm", height: "1cm", objectFit: "contain" }}
+                    className="mx-auto"
+                  />
+                  <img
+                    src="src/components/images/RabbitMQ.png"
+                    alt="RabbitMQ"
+                    style={{ width: "1cm", height: "1cm", objectFit: "contain" }}
+                    className="mx-auto"
+                  />
+                  <img
+                    src="src/components/images/Apache Spark.png"
+                    alt="Apache Spark"
+                    style={{ width: "1cm", height: "1cm", objectFit: "contain" }}
+                    className="mx-auto"
+                  />
+                  <img
+                    src="src/components/images/azure.png"
+                    alt="Azure"
+                    style={{ width: "1cm", height: "1cm", objectFit: "contain" }}
+                    className="mx-auto"
+                  />
+                  <img
+                    src="src/components/images/Google Cloud.png"
+                    alt="Google Cloud"
+                    style={{ width: "1cm", height: "1cm", objectFit: "contain" }}
+                    className="mx-auto"
+                  />
+                  <img
+                    src="src/components/images/GraphQL.png"
+                    alt="GraphQL"
+                    style={{ width: "1cm", height: "1cm", objectFit: "contain" }}
+                    className="mx-auto"
+                  />
+                  <img
+                    src="src/components/images/MySQL.png"
+                    alt="MySQL"
+                    style={{ width: "1cm", height: "1cm", objectFit: "contain" }}
+                    className="mx-auto"
+                  />
+                  <img
+                    src="src/components/images/Python.png"
+                    alt="Python"
+                    style={{ width: "1cm", height: "1cm", objectFit: "contain" }}
+                    className="mx-auto"
+                  />
+                  <img
+                    src="src/components/images/React.png"
+                    alt="React"
+                    style={{ width: "1cm", height: "1cm", objectFit: "contain" }}
+                    className="mx-auto"
+                  />
                 </div>
               </div>
             </div>
           </div>
 
           {/* Trust/Comply/Consume Column */}
-          <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200">
-            <div className="text-center mb-6">
-              <div className="flex items-center justify-center space-x-4 mb-4">
-                <div className="flex space-x-2">
-                  <div className="w-3 h-3 bg-gradient-to-r from-blue-500 to-blue-700 rounded-full"></div>
-                  <div className="w-3 h-3 bg-gradient-to-r from-blue-500 to-blue-700 rounded-full"></div>
-                  <div className="w-3 h-3 bg-gradient-to-r from-blue-500 to-blue-700 rounded-full"></div>
-                  <div className="w-3 h-3 bg-gradient-to-r from-blue-500 to-blue-700 rounded-full"></div>
-                </div>
+          <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200 w-90 h-[67vh]">
+            {/* Core Principles Header */}
+            <div className="text-center mb-5">
+              <div className="flex justify-center space-x-2 mb-4">
+                <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
               </div>
-              <div className="flex justify-center space-x-4 mb-4">
-                <h3 className="text-lg font-semibold bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent">
-                  Trust
-                </h3>
-                <h3 className="text-lg font-semibold bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent">
-                  Comply
-                </h3>
-                <h3 className="text-lg font-semibold bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent">
-                  Consume
-                </h3>
+              <div className="flex justify-center space-x-6 mb-4">
+                <h3 className="text-xl font-bold text-blue-600">Trust</h3>
+                <h3 className="text-xl font-bold text-blue-600">Comply</h3>
+                <h3 className="text-xl font-bold text-blue-600">Consume</h3>
               </div>
-              <div className="h-1 w-60 bg-gradient-to-r from-blue-500 to-blue-700 rounded-full mx-auto"></div>
+              <div className="h-1 w-48 bg-blue-500 rounded-full mx-auto"></div>
             </div>
 
-            <div className="grid grid-cols-2 gap-6 mb-8">
-              <div className="text-center">
-                <h4 className="font-medium text-gray-700 mb-2">Data Sources</h4>
-                <div className="space-y-2">
-                  <div className="bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg p-3 border border-blue-200">
-                    <p className="text-sm font-medium bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent">
-                      Business catalog
-                    </p>
-                    <p className="text-xs text-blue-600">Business metadata</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="text-center">
-                <h4 className="font-medium text-gray-700 mb-2">Data Products</h4>
-                <div className="space-y-2">
-                  <div className="bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg p-3 border border-blue-200">
-                    <p className="text-sm font-medium bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent">
-                      AI agents
-                    </p>
-                    <p className="text-xs text-blue-600">Automated insights</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Rotating Governance Circle */}
-            <div className="relative mb-8">
-              <div className="w-48 h-48 mx-auto relative">
-                <div className="absolute inset-0 animate-spin-slow">
-                  <svg viewBox="0 0 200 200" className="w-full h-full">
-                    {/* Rotating arrows */}
-                    <defs>
-                      <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#3b82f6" />
-                        <stop offset="100%" stopColor="#1d4ed8" />
-                      </linearGradient>
-                      <marker
-                        id="arrowhead"
-                        markerWidth="10"
-                        markerHeight="7"
-                        refX="9"
-                        refY="3.5"
-                        orient="auto"
-                      >
-                        <polygon points="0 0, 10 3.5, 0 7" fill="url(#blueGradient)" />
-                      </marker>
-                    </defs>
-                    
-                    {/* Circle with arrows */}
-                    <circle
-                      cx="100"
-                      cy="100"
-                      r="80"
-                      fill="none"
-                      stroke="url(#blueGradient)"
-                      strokeWidth="3"
-                      strokeDasharray="10 5"
-                      markerEnd="url(#arrowhead)"
-                    />
-                    
-                    {/* Multiple arrow segments for continuous flow */}
-                    <path
-                      d="M 100 20 A 80 80 0 0 1 180 100"
-                      fill="none"
-                      stroke="url(#blueGradient)"
-                      strokeWidth="3"
-                      markerEnd="url(#arrowhead)"
-                    />
-                    <path
-                      d="M 180 100 A 80 80 0 0 1 100 180"
-                      fill="none"
-                      stroke="url(#blueGradient)"
-                      strokeWidth="3"
-                      markerEnd="url(#arrowhead)"
-                    />
-                    <path
-                      d="M 100 180 A 80 80 0 0 1 20 100"
-                      fill="none"
-                      stroke="url(#blueGradient)"
-                      strokeWidth="3"
-                      markerEnd="url(#arrowhead)"
-                    />
-                    <path
-                      d="M 20 100 A 80 80 0 0 1 100 20"
-                      fill="none"
-                      stroke="url(#blueGradient)"
-                      strokeWidth="3"
-                      markerEnd="url(#arrowhead)"
-                    />
-                  </svg>
-                </div>
-
-                {/* Center governance hub */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-blue-700 rounded-full flex items-center justify-center shadow-lg">
-                    <Shield className="w-10 h-10 text-white" />
-                  </div>
-                </div>
-
-                {/* Labels positioned around the circle */}
-                <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-32 text-center">
-                  <div className="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-3 py-1 rounded-full text-xs font-medium shadow-md hover:shadow-lg transition-shadow">
-                    Data products and marketplace
-                  </div>
-                </div>
-                
-                <div className="absolute right-2 top-1/2 transform -translate-y-1/2 w-32 text-center">
-                  <div className="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-3 py-1 rounded-full text-xs font-medium shadow-md hover:shadow-lg transition-shadow">
-                    Policy enforcement
-                  </div>
-                </div>
-                
-                <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-32 text-center">
-                  <div className="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-3 py-1 rounded-full text-xs font-medium shadow-md hover:shadow-lg transition-shadow">
-                    Data quality and observability
-                  </div>
-                </div>
-                
-                <div className="absolute left-2 top-1/2 transform -translate-y-1/2 w-32 text-center">
-                  <div className="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-3 py-1 rounded-full text-xs font-medium shadow-md hover:shadow-lg transition-shadow">
-                    Policy setting
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Bottom integrations */}
-            <div className="space-y-4">
-              <div className="text-center">
-                <h4 className="font-medium text-gray-700 mb-3">
-                  Consumer integrations
+            {/* Unified Governance Section */}
+            <div className="bg-gray-50 rounded-lg p-2 mb-6">
+              <div className="text-center mb-4">
+                <h4 className="text-sm font-bold text-blue-700 mb-3">
+                  With unified governance for data and AI
                 </h4>
               </div>
 
-              <div className="grid grid-cols-4 gap-2">
-                <div className="bg-gradient-to-r from-blue-100 to-blue-200 border border-blue-200 rounded-lg p-2 text-center">
-                  <span className="text-xs font-medium text-blue-700">BI tools</span>
-                </div>
-                <div className="bg-gradient-to-r from-blue-100 to-blue-200 border border-blue-200 rounded-lg p-2 text-center">
-                  <span className="text-xs font-medium text-blue-700">Apps</span>
-                </div>
-                <div className="bg-gradient-to-r from-blue-100 to-blue-200 border border-blue-200 rounded-lg p-2 text-center">
-                  <span className="text-xs font-medium text-blue-700">ML/AI</span>
-                </div>
-                <div className="bg-gradient-to-r from-blue-100 to-blue-200 border border-blue-200 rounded-lg p-2 text-center">
-                  <span className="text-xs font-medium text-blue-700">APIs</span>
+              <div className=" bg-blue-50 border-2 border-dashed border-blue-200 rounded-lg p-1">
+                <h5 className="text-base font-semibold text-blue-700 text-center mb-1">
+                  Semantic Graph
+                </h5>
+                <p className="text-xs text-blue-600 text-center">
+                  Physical, logical, conceptual, semantic, systems, policy, ...
+                </p>
+              </div>
+            </div>
+
+            {/* Central Governance Circle */}
+            <div className="relative mb-8 h-[280px]">
+              <div className="relative w-48 h-48 mx-auto flex items-center justify-center">
+                {/* CircleArrows replaces motion div */}
+                <CircleArrows />
+
+                {/* Center content */}
+                <div className="absolute text-center px-4">
+                  <p className="text-sm font-medium text-green-700">
+                    AI-automated and collaborative stewardship
+                  </p>
                 </div>
               </div>
 
-              <div className="bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-lg p-3 text-center">
-                <p className="text-sm font-medium">Data as a Service</p>
-                <p className="text-xs opacity-90">Self-service data access</p>
-              </div>
+              {/* Top Arrow */}
+              <motion.div
+                initial={{ y: -80, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 1 }}
+                className="absolute top-2 -left-1"
+              >
+                <div className="flex items-center w-60">
+                  <div className="bg-gradient-to-l from-[#BEEAA0] 
+via-[#e1f7d5] 
+to-[rgba(161, 238, 222, 0.3)] px-8 py-3 text-sm text-green-700 font-semibold relative max-w-[200px] rounded-lg shadow-sm">
+                    Policy setting
+                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 
+        w-0 h-0 border-l-10 border-r-10 border-t-10 border-t-blue-200 border-l-transparent border-r-transparent"></div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Right Arrow */}
+              <motion.div
+                initial={{ y: -80, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 1 }}
+                className="absolute top-2 right-0"
+              >
+                <div className="flex items-center ">
+                  <div className="bg-gradient-to-r from-[#BEEAA0] 
+via-[#e1f7d5] 
+to-[rgba(161, 238, 222, 0.3)]
+px-8 py-3 text-sm text-green-700 font-semibold relative max-w-[200px] rounded-lg shadow-sm">
+                    Data quality
+                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 
+        w-0 h-0 border-l-10 border-r-10 border-t-10 border-t-blue-200 border-l-transparent border-r-transparent"></div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Bottom Arrow */}
+              <motion.div
+                initial={{ y: 80, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 1, delay: 0.4 }}
+                className="absolute top-1/2 right-[-100px] transform -translate-y-1/2"
+              >
+                <div className="flex items-center w-60">
+                  <div className="bg-gradient-to-r from-[#BAE1FF] via-[#BAE1FF] to-[#FFFFFF] px-6 py-3 text-xs font-medium text-blue-700  relative max-w-[160px] rounded-lg shadow-sm">
+                    Policy enforcement
+                    <div className=" 
+        w-0 h-0 border-l-10 border-r-10 border-b-10 border-b-blue-200 border-l-transparent border-r-transparent"></div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Left Arrow */}
+              <motion.div
+                initial={{ x: -80, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 1, delay: 0.6 }}
+                className="absolute top-1/2 -left-3 transform -translate-y-1/2 -translate-x-full"
+              >
+                <div className="flex items-center w-30">
+                  <div className="bg-gradient-to-l from-[#BAE1FF] via-[#BAE1FF] to-[#FFFFFF] px-8 py-3 text-sm text-blue-700 font-semibold relative max-w-[200px] rounded-lg shadow-sm">
+                    <div className="absolute top-2 
+        w-0 h-0 border-t-10 border-b-10 border-l-10 border-l-blue-200 border-t-transparent border-b-transparent"></div>
+                    Data products
+                  </div>
+                </div>
+              </motion.div>
             </div>
           </div>
         </div>
