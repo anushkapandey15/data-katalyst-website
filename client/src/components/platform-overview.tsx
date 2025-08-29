@@ -13,6 +13,19 @@ import {
 import { motion } from "framer-motion";
 import CircleArrows from "./circle-arrows";
 
+import ApacheAirflow from "../assets/images/Apache Airflow.png";
+import ApacheKafka from "../assets/images/Apache Kafka.png";
+import Salesforce from "../assets/images/Salesforce.png";
+import D3js from "../assets/images/D3.js.png";
+import RabbitMQ from "../assets/images/RabbitMQ.png";
+import ApacheSpark from "../assets/images/Apache Spark.png";
+import Azure from "../assets/images/azure.png";
+import GoogleCloud from "../assets/images/Google Cloud.png";
+import GraphQL from "../assets/images/GraphQL.png";
+import MySQL from "../assets/images/MySQL.png";
+import Python from "../assets/images/Python.png";
+import React from "../assets/images/React.png";
+
 const PlatformOverview = () => {
   return (
     <section className="py-4 bg-gradient-to-b from-gray-50 to-white">
@@ -122,73 +135,73 @@ const PlatformOverview = () => {
                 {/* Integration Partners (with images) */}
                 <div className="grid grid-cols-4 gap-3">
                   <img
-                    src="src/components/images/Apache Airflow.png"
+                    src={ApacheAirflow}
                     alt="Apache Airflow"
                     style={{ width: "1cm", height: "1cm", objectFit: "contain" }}
                     className="mx-auto"
                   />
                   <img
-                    src="src/components/images/Apache Kafka.png"
+                    src={ApacheKafka}
                     alt="Apache Kafka"
                     style={{ width: "1cm", height: "1cm", objectFit: "contain" }}
                     className="mx-auto"
                   />
                   <img
-                    src="src/components/images/Salesforce.png"
+                    src={Salesforce}
                     alt="Salesforce"
                     style={{ width: "1cm", height: "1cm", objectFit: "contain" }}
                     className="mx-auto"
                   />
                   <img
-                    src="src/components/images/D3.js.png"
+                    src={D3js}
                     alt="D3.js"
                     style={{ width: "1cm", height: "1cm", objectFit: "contain" }}
                     className="mx-auto"
                   />
                   <img
-                    src="src/components/images/RabbitMQ.png"
+                    src={RabbitMQ}
                     alt="RabbitMQ"
                     style={{ width: "1cm", height: "1cm", objectFit: "contain" }}
                     className="mx-auto"
                   />
                   <img
-                    src="src/components/images/Apache Spark.png"
+                    src={ApacheSpark}
                     alt="Apache Spark"
                     style={{ width: "1cm", height: "1cm", objectFit: "contain" }}
                     className="mx-auto"
                   />
                   <img
-                    src="src/components/images/azure.png"
+                    src={Azure}
                     alt="Azure"
                     style={{ width: "1cm", height: "1cm", objectFit: "contain" }}
                     className="mx-auto"
                   />
                   <img
-                    src="src/components/images/Google Cloud.png"
+                    src={GoogleCloud}
                     alt="Google Cloud"
                     style={{ width: "1cm", height: "1cm", objectFit: "contain" }}
                     className="mx-auto"
                   />
                   <img
-                    src="src/components/images/GraphQL.png"
+                    src={GraphQL}
                     alt="GraphQL"
                     style={{ width: "1cm", height: "1cm", objectFit: "contain" }}
                     className="mx-auto"
                   />
                   <img
-                    src="src/components/images/MySQL.png"
+                    src={MySQL}
                     alt="MySQL"
                     style={{ width: "1cm", height: "1cm", objectFit: "contain" }}
                     className="mx-auto"
                   />
                   <img
-                    src="src/components/images/Python.png"
+                    src={Python}
                     alt="Python"
                     style={{ width: "1cm", height: "1cm", objectFit: "contain" }}
                     className="mx-auto"
                   />
                   <img
-                    src="src/components/images/React.png"
+                    src={React}
                     alt="React"
                     style={{ width: "1cm", height: "1cm", objectFit: "contain" }}
                     className="mx-auto"
